@@ -4,22 +4,7 @@ import "./styles.css";
 import { useState } from "react";
 
 export default function App() {
-  // const [text, setText] = useState(
-  //   "# Welcome to my React Markdown Previewer!## This is a sub-heading...<br /> ### And here's some other cool stuff: <br /> Heres some code, `<div></div>`, between 2 backticks.<br /> ``` // this is multi-line code: function anotherExample(firstLine, lastLine) { if (firstLine == '```' && lastLine == '```') {  return multiLineCode; } ```<br /> You can also make text **bold**... whoa!<br /> Or _italic_.<br /> Or... wait for it... **_both!_** <br />And feel free to go crazy ~~crossing stuff out~~.<br /> There's also [links](https://www.freecodecamp.org), and<br /> > Block Quotes! <br />And if you want to get really crazy, even tables:<br />  - And of course there are lists.   - Some are bulleted.  - With different indentation levels.  - That look like this.  1. And there are numbered lists too. 1. Use just 1s if you want! 1. And last but not least, let's not forget embedded images: ![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)"
-  // );
   const [text, setText] = useState(
-    /*   `# Welcome to my React Markdown Previewer!
- ## This is a sub-heading
- ### And here's some other cool stuff:
- Heres some code, \`\`<div></div>\`\`, between 2 backticks.
- \`\`\` // this is multi-line code: function anotherExample(firstLine, lastLine) { if (firstLine == '\`\`\`' && lastLine == '\`\`\`') {  return multiLineCode; } \`\`\`
- There's also [links](https://www.freecodecamp.org)
- > Block Quotes!
- You can also make text **bold**... whoa!
- - And of course there are lists.
-  - Some are bulleted. 
- And last but not least, let's not forget embedded images: ![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)
- `*/
     "# Welcome to my React Markdown Previewer!\n" +
       "## This is a sub-heading\n" +
       "### And here's some other cool stuff:\n" +
@@ -28,11 +13,8 @@ export default function App() {
       "There's also [links](https://www.freecodecamp.org)\n" +
       "> Block Quotes!\n" +
       "You can also make text **bold**... whoa!\n" +
-      "- And of course there are lists.\n" +
-      "And last but not least, let's not forget embedded images: ![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)"
+      "- And of course there are lists.\n"
   );
-
-  //Heres some code, ``<div></div>``, between 2 backticks.
 
   function handleChange(event) {
     //const markdown = marked.parse(event.target.value);
@@ -51,8 +33,14 @@ export default function App() {
 
   return (
     <div className="App">
-      <textarea onChange={handleChange} id="editor" />
-      <div id="preview" dangerouslySetInnerHTML={markup} />
+      <div class="panel">
+        <h2 class="title">Enter markdown:</h2>
+        <textarea onChange={handleChange} id="editor" />
+      </div>
+      <div class="panel">
+        <h2 class="title">Preview:</h2>
+        <div id="preview" dangerouslySetInnerHTML={markup} />
+      </div>
     </div>
   );
 }
@@ -71,15 +59,5 @@ User Story #5: When my markdown previewer first loads, the default text in the #
 User Story #6: When my markdown previewer first loads, the default markdown in the #editor field should be rendered as HTML in the #preview element.
 
 Optional Bonus (you do not need to make this test pass): My markdown previewer interprets carriage returns and renders them as br (line break) elements.
-
-
- const renderedHTML = md.render(markdown);
-  return {__html: renderedHTML};
-}
-
-export default function MarkdownPreview({ markdown }) {
-  const markup = renderMarkdownToHTML(markdown);
-  return <div dangerouslySetInnerHTML={markup} />;
-}
 
 */
